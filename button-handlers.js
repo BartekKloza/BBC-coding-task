@@ -25,6 +25,7 @@ function stopButton(){
 
 function resetButton(){
     fillArrWithZeros(cellTable);
+    fillArrWithZeros(deadCellTable);
     generation = 0;
     redrawCells();
     updateGen();
@@ -38,6 +39,7 @@ function randomButton() {
         }
     }
     stopButton();
+    fillArrWithZeros(deadCellTable);
     redrawCells();
     generation = 0;
     updateGen();
@@ -59,7 +61,11 @@ function setSizeButton(){
         rows = Math.floor(canvas.height/cellSize);
         cols = Math.floor(canvas.width/cellSize);
         cellTable = create2DArray();
+        deadCellTable = create2DArray();
         nextGenTable = create2DArray();
+        fillArrWithZeros(cellTable);
+        fillArrWithZeros(nextGenTable);
+        fillArrWithZeros(deadCellTable);
         document.getElementById('userSize').placeholder = userSize;
         redrawCells();
     }
@@ -80,7 +86,11 @@ function setCellSizeButton(){
         rows = Math.floor(canvas.height/cellSize);
         cols = Math.floor(canvas.width/cellSize);
         cellTable = create2DArray();
+        deadCellTable = create2DArray();
         nextGenTable = create2DArray();
+        fillArrWithZeros(cellTable);
+        fillArrWithZeros(nextGenTable);
+        fillArrWithZeros(deadCellTable);
         document.getElementById('userCellSize').placeholder = userCellSize;
         redrawCells();
     }
@@ -121,21 +131,33 @@ function hideAlert(){
 }
 
 function updateCellColor(event){
-    stopButton();
+
     cellColor = event.target.value;
     redrawCells();
 }
 
 function updateGridColor(event){
-    stopButton();
+
     gridColor = event.target.value;
     canvas.style.borderColor = gridColor;
+    redrawCells();
+}
+
+function updateDeadCellColor(event){
+
+    deadCellColor = event.target.value;
     redrawCells();
 }
 let alertMessage = document.getElementById('alertMessage');
 let userCellColorButton = document.getElementById('userCellColor');
 let userGridColorButton = document.getElementById('userGridColor');
+let userDeadCellColorButton = document.getElementById('userDeadCellColor');
+
 
 userCellColorButton.addEventListener('change', updateCellColor, false);
 userGridColorButton.addEventListener('change', updateGridColor, false);
+userDeadCellColorButton.addEventListener('change', updateDeadCellColor, false);
+
+
+
 

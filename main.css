@@ -6,3 +6,94 @@ canvas {
 body {
     margin: 0px;
 }
+
+.btn-primary {
+    border-color: white;
+}
+
+button:focus {
+    outline:0;
+}
+
+textarea {
+    resize: none;
+    padding: 0px;
+  }
+
+.row-padding{
+    padding-bottom: 15px;
+}
+
+
+#userCellSize, #userInterval, #userSize{
+    width: 80px;
+}
+
+label{
+    padding: 3px;
+}
+.input-button-width {
+    width: 200px;
+}
+
+.btn.btn-success button {
+    width: 150px;
+}
+
+.set-colors-btn {
+    background-color: #ffa700;
+    border-color: #ffa700;
+    color: white;
+}
+
+.no-padding{
+    padding: 0px;
+}
+
+.showAlert {
+    display: block;
+}
+
+.hideAlert {
+    display: none;
+}
+
+.hideAlertBtn {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-color: #007bff;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 1s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
