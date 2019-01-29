@@ -47,7 +47,7 @@ function randomButton() {
 
 function setSizeButton(){
     let userSize = parseInt(document.getElementById('userSize').value,10);
-    if(userSize < 50 || userSize > maxWidth){
+    if(userSize < 50 || userSize > maxWidth || isNaN(userSize)){
         alertMessage.innerHTML = 
         'The size is incorrect. It must be between 50px and ' 
         + maxWidth + 'px';
@@ -73,7 +73,7 @@ function setSizeButton(){
 
 function setCellSizeButton(){
     let userCellSize = parseInt(document.getElementById('userCellSize').value,10);
-    if(userCellSize < 2 || userCellSize * 4 > canvas.width){
+    if(userCellSize < 2 || userCellSize * 4 > canvas.width || isNaN(userCellSize)){
         alertMessage.innerHTML = 
         'The cell size is incorrect. It must be between 2px and ' 
         + canvas.width/4 + 'px';
@@ -99,7 +99,7 @@ function setCellSizeButton(){
 
 function setIntervalButton(){
     let userInterval = parseInt(document.getElementById('userInterval').value,10);
-    if(userInterval < 1 || userInterval > 60000){
+    if(userInterval < 1 || userInterval > 60000 || isNaN(userInterval)){
         alertMessage.innerHTML = 
         'The interval delay is incorrect. It must be between 1 millisecond and 1 minute';
         showAlert();
