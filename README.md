@@ -6,7 +6,7 @@ Coding task for BBC Software Engineering Scheme.
 2. Open `index.html` using any modern browser (Chrome, Firefox, etc.)
 
 ### Project description
-This project is an implementation of "The Game of Life" rules using HTML, CSS, JavaScript and Bootstrap 4. By default, the website loads with a game board of size 600px by 600px with letters "BBC" formed with cells. Black squares represent live cells and white squares represent empty space. Displaying dead cells can be turned on by pressing Dead Cells button and choosing a different colour than white.
+This project is an implementation of "The Game of Life" rules using HTML, CSS, JavaScript and Bootstrap 4. By default, the website loads with a game board of size 600px by 600px with letters "BBC" formed with cells. Black squares represent live cells and white squares represent empty space. Displaying dead cells can be turned on by pressing Dead Cells button and choosing a different colour than white. User can click on the game board to create/delete cells.
 
 ### Controlling the game board
 User can control the game board using the blue set of buttons:
