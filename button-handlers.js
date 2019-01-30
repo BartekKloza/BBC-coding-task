@@ -116,10 +116,6 @@ function setIntervalButton(){
         }
     }
 }
-
-function setColorsButton(){
-
-}
 function showAlert(){
     document.getElementById('alertRow').classList.add('showAlert');
     document.getElementById('alertRow').classList.remove('hideAlert');
@@ -148,11 +144,11 @@ function updateDeadCellColor(event){
     deadCellColor = event.target.value;
     redrawCells();
 }
+
 let alertMessage = document.getElementById('alertMessage');
 let userCellColorButton = document.getElementById('userCellColor');
 let userGridColorButton = document.getElementById('userGridColor');
 let userDeadCellColorButton = document.getElementById('userDeadCellColor');
-
 
 userCellColorButton.addEventListener('change', updateCellColor, false);
 userGridColorButton.addEventListener('change', updateGridColor, false);

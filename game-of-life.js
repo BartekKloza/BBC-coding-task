@@ -121,12 +121,9 @@ function getCursorPosition(event) {
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
-    console.log(x + ' ' + y);
     if(y<cellTable.length*cellSize && x < cellTable[0].length*cellSize){
         x = Math.floor(x/cellSize);
         y = Math.floor(y/cellSize);
-        console.log(x + ' ' + y);
-        console.table(cellTable);
         switch (cellTable[y][x]) {
             case 0:
                 cellTable[y][x]=1;
@@ -147,23 +144,12 @@ function updateGen(){
     document.getElementById('gen').innerHTML=generation;
 }
 
-function fillInitialTest() {
-    cellTable[5][5]=1;
-    cellTable[6][6]=1;
-    cellTable[6][7]=1;
-    cellTable[6][8]=1;
-    cellTable[6][3]=1;
-    cellTable[6][2]=1;
-    cellTable[4][3]=1;
-}
-
-function main(){
+function init(){
     fillArrWithZeros(cellTable);
     fillArrWithZeros(nextGenTable);
     fillArrWithZeros(deadCellTable);
-    fillInitialTest();
-    drawGrid();
-    drawCells();
+    fillInitial();
+    redrawCells();
     canvas.addEventListener('mousedown', function (e) { getCursorPosition(e);});
     document.getElementById('stop').classList.add('disabled');
     
@@ -185,4 +171,4 @@ let nextGenTable = create2DArray();
 let deadCellTable = create2DArray();
 let maxWidth = document.getElementById("maxCanvasWidth").clientWidth-100;
 
-main();
+init();
